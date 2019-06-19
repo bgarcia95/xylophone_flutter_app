@@ -6,53 +6,59 @@ void main() {
 }
 
 class XylophoneApp extends StatelessWidget {
-  final player = AudioCache();
+  //Function to get a different audio on each button
+  void playSound(int soundNumber) {
+    final player = AudioCache();
+    player.play('note$soundNumber.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               FlatButton(
                 onPressed: () {
-                  player.play('note1.wav');
+                  playSound(1);
                 },
                 color: Colors.red,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note2.wav');
+                  playSound(2);
                 },
                 color: Colors.orange,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note3.wav');
+                  playSound(3);
                 },
                 color: Colors.yellow,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note4.wav');
+                  playSound(4);
                 },
                 color: Colors.green,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note5.wav');
+                  playSound(5);
                 },
                 color: Colors.teal,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note6.wav');
+                  playSound(6);
                 },
                 color: Colors.blue,
               ),
               FlatButton(
                 onPressed: () {
-                  player.play('note7.wav');
+                  playSound(7);
                 },
                 color: Colors.purple,
               ),
